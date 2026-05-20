@@ -1,0 +1,196 @@
+# JobIntel filter configuration
+# Edit this file to customise which jobs appear in your digest.
+# All patterns are Python regex strings (case-insensitive).
+# Each vertical/region uses the union of all listed patterns.
+# To add a custom vertical, add a new [verticals.<name>] section.
+
+# ---------------------------------------------------------------------------
+# Verticals — job must match at least one vertical to appear in your digest.
+# ---------------------------------------------------------------------------
+
+[verticals.ai]
+patterns = [
+    "\\bai\\b",
+    "\\bml\\b",
+    "machine learning",
+    "deep learning",
+    "\\bllm\\b",
+    "genai",
+    "generative ai",
+    "generative model",
+    "\\bnlp\\b",
+    "natural language",
+    "computer vision",
+    "\\bcv\\b(?= engineer| scientist| researcher)",
+    "pytorch",
+    "tensorflow",
+    "\\bmlops\\b",
+    "\\bmlp\\b",
+    "neural network",
+    "transformer model",
+    "data scientist",
+    "\\bgpt\\b",
+    "\\bclaude\\b",
+    "foundation model",
+    "reinforcement learning",
+    "\\brag\\b(?= pipeline| system| application)",
+    "vector database",
+    "embedding model",
+]
+
+[verticals.saas]
+patterns = [
+    "saas\\b",
+    "software as a service",
+    "subscription[- ]based",
+    "product[- ]led",
+    "\\bplg\\b",
+    "cloud (saas|software|platform)",
+    "recurring revenue",
+    "\\bb2b\\b",
+    "multi[- ]tenant",
+    "api[- ]first",
+    "vertical saas",
+    "horizontal saas",
+    "platform engineering",
+]
+
+[verticals.fintech]
+patterns = [
+    "fintech",
+    "open banking",
+    "payment(s)? (api|platform|infra|gateway|processing)",
+    "\\bneobank\\b",
+    "lending (platform|as a service)",
+    "\\bdefi\\b",
+    "decentralized finance",
+    "wealth ?tech",
+    "\\binsurtech\\b",
+    "\\bcrypto\\b",
+    "\\bblockchain\\b",
+    "digital wallet",
+    "payment rails",
+    "\\bkyc\\b",
+    "\\baml\\b",
+    "trading platform",
+    "investment platform",
+    "\\bregtech\\b",
+]
+
+[verticals.health_tech]
+patterns = [
+    "health ?tech",
+    "healthcare",
+    "\\bmedtech\\b",
+    "digital health",
+    "clinical",
+    "\\behr\\b",
+    "\\bemr\\b",
+    "\\bfda\\b",
+    "\\bhipaa\\b",
+    "patient (data|platform|outcomes|care)",
+    "pharma",
+    "biotech",
+    "life sciences",
+    "telemedicine",
+    "telehealth",
+    "mental health (platform|tech|app)",
+    "remote patient monitoring",
+    "medical device",
+    "health data",
+    "genomics",
+]
+
+# ---------------------------------------------------------------------------
+# Regions — jobs are matched to one or more regions from their text.
+# ---------------------------------------------------------------------------
+
+[regions.uk]
+patterns = [
+    "\\buk\\b",
+    "united kingdom",
+    "england",
+    "scotland",
+    "wales",
+    "northern ireland",
+    "london",
+    "manchester",
+    "birmingham",
+    "leeds",
+    "bristol",
+    "edinburgh",
+    "cambridge",
+    "oxford",
+]
+
+[regions.us]
+patterns = [
+    "\\busa?\\b",
+    "united states",
+    "u\\.s\\.",
+    "america(?!n express)",
+    "new york",
+    "san francisco",
+    "\\bnyc\\b",
+    "sf bay",
+    "seattle",
+    "austin\\b",
+    "boston",
+    "chicago",
+    "los angeles",
+    "\\bla\\b(?=,| ca)",
+    "denver",
+    "atlanta",
+    "miami",
+]
+
+[regions.eu]
+patterns = [
+    "\\beu\\b",
+    "europe(?!an express)",
+    "berlin",
+    "amsterdam",
+    "paris",
+    "dublin",
+    "madrid",
+    "barcelona",
+    "munich",
+    "frankfurt",
+    "stockholm",
+    "helsinki",
+    "lisbon",
+    "warsaw",
+    "prague",
+    "vienna",
+    "milano",
+    "rome",
+    "copenhagen",
+    "zurich",
+    "brussels",
+    "rotterdam",
+    "hamburg",
+]
+
+[regions.canada]
+patterns = [
+    "\\bcanada\\b",
+    "toronto",
+    "vancouver",
+    "montreal",
+    "calgary",
+    "ottawa",
+    "waterloo",
+    "edmonton",
+]
+
+[regions.remote]
+patterns = [
+    "\\bremote\\b",
+    "work from home",
+    "\\bwfh\\b",
+    "fully distributed",
+    "distributed team",
+    "remote[- ]first",
+    "remote[- ]friendly",
+    "anywhere in the world",
+]
