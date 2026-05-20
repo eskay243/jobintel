@@ -15,6 +15,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+gui = ["streamlit>=1.35.0"]
 
 [project.scripts]
 jobintel = "jobintel.__main__:main"

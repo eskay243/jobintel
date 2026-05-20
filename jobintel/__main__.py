@@ -86,6 +86,14 @@ def cmd_run(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_gui(_args: argparse.Namespace) -> int:
+    import subprocess
+
+    gui_path = Path(__file__).parent / "gui.py"
+    subprocess.run([sys.executable, "-m", "streamlit", "run", str(gui_path)], check=True)
+    return 0
+
+
 def cmd_stats(args: argparse.Namespace) -> int:
     import sqlite3
 
@@ -132,6 +140,9 @@ def main() -> int:
     p_st = sub.add_parser("stats", help="Show how many roles are in the dedupe store.")
     p_st.add_argument("--db", type=str, default=None)
     p_st.set_defaults(func=cmd_stats)
+
+    p_gui = sub.add_parser("gui", help="Launch the Streamlit web dashboard.")
+    p_gui.set_defaults(func=cmd_gui)
 
     args = ap.parse_args()
     return int(args.func(args))

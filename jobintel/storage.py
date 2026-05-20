@@ -114,5 +114,8 @@ class JobStore:
         )
         self._conn.commit()
 
+    def count(self) -> int:
+        return self._conn.execute("SELECT COUNT(*) FROM seen").fetchone()[0]
+
     def close(self) -> None:
         self._conn.close()
